@@ -23,6 +23,11 @@ function limparCampo() {
 }
 
 function exibirArray() {
+  let texto = "";
   let lista = document.getElementById("listaAmigos");
-  lista.innerHTML = amigos;
+  lista.innerHTML = "";
+  for (let i = 0; i < amigos.length; i++) {
+    texto += `${amigos[i]}\n`;
+  }
+  lista.innerHTML = texto;
 }
