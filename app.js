@@ -5,7 +5,12 @@ function adicionarAmigo() {
   let amigo = document.getElementById("amigo");
   if (amigo.value != "") {
     amigos.push(amigo.value);
+    limparCampo();
   } else {
     alert("Por favor, insira o nome de um amigo para adicionar.");
   }
+}
+function limparCampo() {
+  let amigo = document.getElementById("amigo");
+  amigo.value = "";
 }
