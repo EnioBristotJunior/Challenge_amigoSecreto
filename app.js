@@ -6,11 +6,23 @@ function adicionarAmigo() {
   if (amigo.value != "") {
     amigos.push(amigo.value);
     limparCampo();
+    exibirArray();
   } else {
     alert("Por favor, insira o nome de um amigo para adicionar.");
   }
 }
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    adicionarAmigo();
+  }
+});
 function limparCampo() {
   let amigo = document.getElementById("amigo");
   amigo.value = "";
+}
+
+function exibirArray() {
+  let lista = document.getElementById("listaAmigos");
+  lista.innerHTML = amigos;
 }
