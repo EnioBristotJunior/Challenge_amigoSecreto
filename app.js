@@ -31,3 +31,27 @@ function exibirArray() {
   }
   lista.innerHTML = texto;
 }
+
+function sortearAmigo() {
+  if (amigos.length >= 1) {
+    let amigoEscolhido = parseInt(Math.random() * amigos.length);
+    console.log(amigoEscolhido);
+    exibirResultado(amigoEscolhido);
+  } else {
+    alert("Adicione um amigo primeiro.");
+  }
+}
+
+function exibirResultado(i) {
+  let resultado = document.getElementById("resultado");
+  resultado.innerHTML = "";
+  let amigoSecreto = amigos[i];
+  resultado.innerHTML = amigoSecreto;
+  limparArray();
+}
+
+function limparArray() {
+  let lista = document.getElementById("listaAmigos");
+  lista.innerHTML = "";
+  amigos = [];
+}
